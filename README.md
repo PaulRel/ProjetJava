@@ -3,7 +3,7 @@ Ce projet est un jeu interactif de type 'vous êtes le héros', où l'histoire �
 
 Le fichier 'Présentation des classes.md' décrit les fonctions et responsabilités des différentes classes du projet.
 Le dossier 'ProjetJavaJeu' englobe les éléments suivants:
--	_images_ : Inclut les images utilisées dans l'interface graphique, principalement générées par l'IA
+-	_images_ : Inclut les images utilisées dans l'interface graphique (principalement générées par IA ou créees par moi-même)
 -	_sons_ : Contient les fichiers audio employés dans l'interface graphique
 -	_src_ : Comprend le code source en langage Java du projet
 
