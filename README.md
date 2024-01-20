@@ -3,7 +3,7 @@ Ce projet est un jeu interactif de type 'vous êtes le héros', où l'histoire �
 
 Le fichier 'Présentation des classes.md' décrit les fonctions et responsabilités des différentes classes du projet.
 
-L
+Le répertoire 'Capture d'écran d'une partie' présente des images de l'interface graphique créée avec la bibliothèque graphique Java Swing.
 
 Le dossier 'ProjetJavaJeu' englobe les éléments suivants:
 -	_images_ : Inclut les images utilisées dans l'interface graphique (principalement générées par IA ou créees par moi-même)
