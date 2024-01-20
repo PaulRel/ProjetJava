@@ -19,6 +19,6 @@ Le joueur doit obtenir les pouvoirs qui provoquent le plus de dégâts pour avoi
 
 
 ## Annexes :
-Sauvegarde de la Partie :
+### Sauvegarde de la Partie :
 Le joueur peut sauvegarder sa progression pour lui permettre de revenir à un état antérieur s'il le souhaite. Cela peut être particulièrement utile avant le combat final. Pour sauvegarder la partie à partir de l'interface graphique, cliquez sur Menu en haut à gauche de la fenêtre et Sauvegarder la partie et choisissez un emplacement sur votre disque dur. Pour reprendre une partie débutez dans l’interface, vous exécutez le code, vous tapez 1 (pour jouer sur l’interface graphique),et cliquez sur le bouton Parties Sauvegardées. Si vous êtes sur une partie en cours, allez dans le Menu en haut à gauche et cliquez sur Ouvrir. Une fenêtre s’ouvre, retrouvez la sauvegarde là où vous l'avez enregistrée, sélectionnez la sauvegarde et cliquez sur ouvrir. Pour sauvegarder une partie dans la console, à chaque nœud de décision vous sera proposé de sauvegarder la partie en tapant 0. La sauvegarde est directement enregistrée dans le dossier actuel avec comme nom “sauvegarde _ date et heure de l’enregistrement”. Pour reprendre une partie, il faut relancer le jeu, tapez 2 pour jouer sur console et dans le menu principal tapez 2 (reprendre une sauvegarde). Les sauvegardes seront affichées de la plus récente à la plus ancienne.
 
