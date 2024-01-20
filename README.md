@@ -1,7 +1,7 @@
 # Projet jeu "vous êtes le héros"
-Ce projet est un jeu interactif de type 'vous êtes le héros', où l'histoire évolue en fonction des choix du joueur et d'éventuels événements aléatoires. Les décisions du joueur influent sur le dénouement de l'histoire, menant à une fin heureuse ou au contraire tragique. L'histoire est divisée en 'nœuds', comprenant des nœuds de décision, où le joueur prend des choix, des nœuds 'chance' avec des événements aléatoires, des nœuds de combat, des nœuds 'énigmes', et des nœuds terminaux pour la fin du jeu.
+Ce projet est un jeu intéractif de type 'vous êtes le héros', où l'histoire évolue en fonction des choix du joueur et d'éventuels événements aléatoires. Les décisions du joueur influent sur le dénouement de l'histoire, menant à une fin heureuse ou au contraire tragique. L'histoire est divisée en 'nœuds', comprenant des nœuds de décision, où le joueur prend des choix, des nœuds 'chance' avec des événements aléatoires, des nœuds de combat, des nœuds 'énigmes', et des nœuds terminaux pour la fin du jeu.
 
-Le fichier '_Présentation des classes.md_' décrit les fonctions et responsabilités des différentes classes du projet.
+Le fichier '_Presentation des classes.md_' décrit les fonctions et responsabilités des différentes classes du projet.
 
 Le répertoire '_Captures_ecran_' contient des captures d'écran de l'interface graphique du jeu créée avec la bibliothèque graphique Java Swing.
 
