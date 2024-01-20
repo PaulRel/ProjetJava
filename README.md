@@ -1,4 +1,4 @@
-# Projet jeu "dont vous êtes le héros"
+# Projet jeu "vous êtes le héros"
 ## Description et Objectifs du jeu :
 Le joueur évolue dans un monde où la plupart des humains sont sans pouvoir mais certains, 
 dont lui, peuvent contrôler l'un des quatre éléments: l'air, la terre, l'eau ou le feu. Cependant, un 
