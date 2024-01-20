@@ -2,8 +2,8 @@
 Notre projet “Projet dont vous êtes le Héros “ est constitué de 4 packages : représentation, univers, jeu et representation.decorators.
 ## 1. Package représentation et representation.decorarors
 ### 1.1. Structure du package représentation et de representation.decorators
-•	**Event** : Interface définissant les méthodes display et chooseNext pour l'avancement du jeu.
-•	**Node** : Classe abstraite représentant les nœuds génériques. Implémente l'interface Event et définit les méthodes de base (comme la redéfinition de la méthode equal). Implémente également Serializable pour permettre de sauvegarder un Node lors de la sauvegarde de la partie.
+- •	**Event** : Interface définissant les méthodes display et chooseNext pour l'avancement du jeu.
+- •	**Node** : Classe abstraite représentant les nœuds génériques. Implémente l'interface Event et définit les méthodes de base (comme la redéfinition de la méthode equal). Implémente également Serializable pour permettre de sauvegarder un Node lors de la sauvegarde de la partie.
 •	**InnerNode** : Classe abstraite représentant les nœuds internes au jeu (autres que TerminalNode). Elle hérite de la classe Node (car un InnerNode est un type particulier de Node). Un InnerNode peut être un DecisionNode, un ChanceNode, un EnigmeNode ou un CombatNode. On a pour cette raison mis cette classe en abstrait pour pouvoir déclarer des méthodes sans fournir l’implémentation et “forcer” les classes filles (DecisionNode, ChanceNode, EnigmeNode, CombatNode) à les implémenter.
 •	**DecisionNode** : Sous-classe d’InnerNode représentant les nœuds où le joueur doit prendre une décision parmi différents choix qui sont stockés dans une ArrayList decisionChoices.
 •	**ChanceNode** : Sous-classe d'InnerNode, représentant un nœud de chance où le nœud suivant est choisi au hasard (parmi une collection de ChancePossibilités) Un ChanceNode peut se présenter de deux manières :
