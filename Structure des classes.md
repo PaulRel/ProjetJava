@@ -1,5 +1,5 @@
 # Structure du code et justification de la hiérarchie entre les classes
-Notre projet “Projet dont vous êtes le Héros “ est constitué de 4 packages : représentation, univers, jeu et representation.decorators.
+Notre projet “Projet dont vous êtes le Héros “ est constitué de 4 packages : représentation, univers, jeu et representation.decorators qui se trouve dans le fichier ProjetJeuJava/src
 ## 1. Package représentation et representation.decorarors
 ### 1.1. Structure du package représentation et de representation.decorators
 -	**Event** : Interface définissant les méthodes display et chooseNext pour l'avancement du jeu.
