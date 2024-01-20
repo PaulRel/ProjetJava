@@ -1,6 +1,12 @@
 # Projet jeu "vous êtes le héros"
 Ce projet est un jeu interactif de type 'vous êtes le héros', où l'histoire évolue en fonction des choix du joueur et d'éventuels événements aléatoires. Les décisions du joueur influent sur le dénouement de l'histoire, menant à une fin heureuse ou au contraire tragique. L'histoire est divisée en 'nœuds', comprenant des nœuds de décision, où le joueur prend des choix, des nœuds chance avec des événements aléatoires, des nœuds de combat, des nœuds énigme, et des nœuds terminaux pour la fin du jeu.
 
+Le fichier 'Présentation des classes.md' décrit les fonctions et responsabilités des différentes classes du projet.
+Le dossier 'ProjetJavaJeu' englobe les éléments suivants:
+-	_images_ : Inclut les images utilisées dans l'interface graphique, principalement générées par l'IA
+-	_sons_ : Contient les fichiers audio employés dans l'interface graphique
+-	_src_ : Comprend le code source en langage Java du projet
+
 ## Description et Objectifs du jeu
 Le joueur évolue dans un monde où la plupart des humains sont sans pouvoir mais certains, dont lui, peuvent contrôler l'un des quatre éléments: l'air, la terre, l'eau ou le feu. Cependant, un maître des éléments a décidé d'utiliser son pouvoir pour faire le mal. Il a incendié les villages, asservi les habitants et défié les autres maîtres des éléments. Votre but est de l'arrêter et de rétablir la paix. Le joueur a également un métier à choisir entre Guerrier, Arbalétrier, Druide, Chasseur et Traqueur qui sera déterminé au cours des premiers nœuds. Chaque métier a une arme associée. Le but du jeu est de vaincre Le Maître des Ténèbres au cours du combat final.
 
