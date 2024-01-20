@@ -2,6 +2,9 @@
 Ce projet est un jeu interactif de type 'vous êtes le héros', où l'histoire évolue en fonction des choix du joueur et d'éventuels événements aléatoires. Les décisions du joueur influent sur le dénouement de l'histoire, menant à une fin heureuse ou au contraire tragique. L'histoire est divisée en 'nœuds', comprenant des nœuds de décision, où le joueur prend des choix, des nœuds 'chance' avec des événements aléatoires, des nœuds de combat, des nœuds 'énigmes', et des nœuds terminaux pour la fin du jeu.
 
 Le fichier 'Présentation des classes.md' décrit les fonctions et responsabilités des différentes classes du projet.
+
+L
+
 Le dossier 'ProjetJavaJeu' englobe les éléments suivants:
 -	_images_ : Inclut les images utilisées dans l'interface graphique (principalement générées par IA ou créees par moi-même)
 -	_sons_ : Contient les fichiers audio employés dans l'interface graphique
@@ -11,7 +14,7 @@ Le dossier 'ProjetJavaJeu' englobe les éléments suivants:
 Le joueur évolue dans un monde où la plupart des humains sont sans pouvoir mais certains, dont lui, peuvent contrôler l'un des quatre éléments: l'air, la terre, l'eau ou le feu. Cependant, un maître des éléments a décidé d'utiliser son pouvoir pour faire le mal. Il a incendié les villages, asservi les habitants et défié les autres maîtres des éléments. Votre but est de l'arrêter et de rétablir la paix. Le joueur a également un métier à choisir entre Guerrier, Arbalétrier, Druide, Chasseur et Traqueur qui sera déterminé au cours des premiers nœuds. Chaque métier a une arme associée. Le but du jeu est de vaincre Le Maître des Ténèbres au cours du combat final.
 
 ## Instructions pour Lancer le Jeu
-Pour lancer le jeu, ouvrir le dossier projet-java dans un IDE (de préférence Eclipse) prenant en charge Java. Votre IDE doit pouvoir exécuter Java Swing sinon le jeu est jouable sur console, mais l’expérience est moins intéressante, se rendre dans le dossier src, ouvrir la classe Main et exécuter le programme. 
+Pour lancer le jeu, ouvrir le dossier projet-java dans un IDE (de préférence Eclipse) prenant en charge Java. Votre IDE doit pouvoir exécuter Java Swing sinon le jeu est jouable sur console, mais l’expérience est moins intéressante, se rendre dans le dossier ProjetJeuJava/src/jeu, ouvrir la fichier Main.java et exécuter le programme. 
 
 ## Contrôles et Interactions
 Pour interagir avec le jeu dans l’interface graphique, il faut appuyer sur les boutons situés en bas de la fenêtre en général. Pour utiliser une arme ou un outil, l’inventaire apparaît sur le côté avec toutes les armes et outils obtenus lors des nœuds précédents. Laissez votre pointeur longuement sur une arme ou un outil pour obtenir leurs caractéristiques (nom, dégâts, points bonus , durabilité).
