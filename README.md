@@ -5,6 +5,8 @@ Le fichier '_Presentation des classes.md_' décrit les fonctions et responsabili
 
 Le répertoire '_Captures_ecran_' contient des captures d'écran de l'interface graphique du jeu créée avec la bibliothèque graphique Java Swing.
 
+Le fichier '_Scenario_' expose les différents scénarios possibles en fonction des choix du joueur, des noeuds de chance (où une part d'aléatoire intervient) ainsi que l'issue des combats (récompenses en cas de victoire). Chaque _noeud_ de l'histoire est détaillé avec sa description, les divers choix ou possibilités et le noeud suivant. 
+
 Le dossier 'ProjetJavaJeu' englobe les éléments suivants:
 -	_images_ : Inclut les images utilisées dans l'interface graphique (principalement générées par IA ou créees par moi-même)
 -	_sons_ : Contient les fichiers audio employés dans l'interface graphique
