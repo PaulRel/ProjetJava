@@ -1,7 +1,7 @@
 # Structure du code et justification de la hiérarchie entre les classes
 Notre projet “Projet dont vous êtes le Héros “ est constitué de 4 packages : représentation, univers, jeu et representation.decorators.
-##1. Package représentation et representation.decorarors
-###1.1. Structure du package représentation et de representation.decorators
+## 1. Package représentation et representation.decorarors
+### 1.1. Structure du package représentation et de representation.decorators
 •	**Event** : Interface définissant les méthodes display et chooseNext pour l'avancement du jeu.
 •	**Node** : Classe abstraite représentant les nœuds génériques. Implémente l'interface Event et définit les méthodes de base (comme la redéfinition de la méthode equal). Implémente également Serializable pour permettre de sauvegarder un Node lors de la sauvegarde de la partie.
 •	**InnerNode** : Classe abstraite représentant les nœuds internes au jeu (autres que TerminalNode). Elle hérite de la classe Node (car un InnerNode est un type particulier de Node). Un InnerNode peut être un DecisionNode, un ChanceNode, un EnigmeNode ou un CombatNode. On a pour cette raison mis cette classe en abstrait pour pouvoir déclarer des méthodes sans fournir l’implémentation et “forcer” les classes filles (DecisionNode, ChanceNode, EnigmeNode, CombatNode) à les implémenter.
