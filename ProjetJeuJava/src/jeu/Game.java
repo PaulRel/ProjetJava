@@ -98,6 +98,7 @@ public class Game {
 	/**
 	 * Elements de l'interface
 	 */
+	private TerminalNode Defaite;
 	private JFrame f, f1;
 	private JMenuItem m1, m2, m3;
 	private JMenu menu;
@@ -281,7 +282,7 @@ public class Game {
 		Ennemis Final=Ennemis.FORT;
 		
 		
-		DecisionNode LaForetMysterieuse	= new DecisionNode("\nVous partez à l’aventure dans une forêt pleine de mystères.\nA l’entrée: vous vous retrouvez face à un choix difficile,\nd’un côté se trouve un sentier étroit et obscur et\nde l’autre un sentier plus large et inondé de lumière.");
+		DecisionNode LaForetMysterieuse	= new DecisionNode("\nVous partez à l’aventure dans une forêt pleine de mystères.\nA l’entrée: vous vous retrouvez face à un choix difficile, d’un côté se trouve un sentier étroit et obscur et de l’autre un sentier plus large et inondé de lumière.");
 		DecisionNode ChoixTresor1		= new DecisionNode("Malheureusement, vous ne pouvez choisir qu’un seul élément. Ce choix déterminera votre métier.");
 		DecisionNode ChoixTresor2		= new DecisionNode("Les créatures ont abandonné des objets mais vous n’avez le temps que d’en prendre un seul avant que d’autres n’arrivent. Ce choix est déterminant pour la suite de votre aventure.");
 		CombatNode Combat1				= new CombatNode("Il faut les combattre, les ennemis ont " +Monstres.getHealth() +" points de vie.", Monstres, ChoixTresor2, 3);
@@ -322,9 +323,9 @@ public class Game {
 		TerminalNode Epilogue			= new TerminalNode("Vous devenez une légende, honoré pour avoir sauvé le monde des ténèbres. Les peuples reconnaissants chantent vos exploits et se souviendront longtemps de votre courage."
 				+ "Vous laissez derrière vous un monde rétabli. Vous restez le gardien de l'équilibre, prêt à guider ce monde vers un avenir lumineux."
 				+ "\n\nMerci d'avoir entrepris ce voyage épique à travers les éléments. Que votre aventure continue à illuminer chaque chemin que vous emprunterez.");
+		Defaite 						= new TerminalNode("Vous n'avez plus de points de vie. Vous avez perdu");
 		
-		
-		CombatNode CombatFinal			= new CombatNode("L’Esprit de la Forêt vous révèle que le Maître des Ténèbres se trouve dans un lieu autrefois oublié, mais désormais imprégné de pouvoir maléfique."
+		CombatNode CombatFinal			= new CombatNode("L’Esprit de la Forêt vous révèle que le Maître des Ténèbres se trouve dans un lieu autrefois oublié, mais désormais imprégné de pouvoir maléfique.\n"
 				+"Guidé par cette nouvelle information, vous vous dirigez vers le repaire du Maître des Ténèbres, déterminé à mettre un terme à ses sombres desseins et à sauver le monde de sa menace imminente."
 				+ "Il est temps d’affronter le Maître des Ténèbres. Il a "+Final.getHealth()+" points de vie et il peut faire jusqu'à 40 dégâts. Une bataille épique s’annonce. Réussirez-vous à sauver le monde ? (Pensez à sauvegarder la partie dans le menu en haut)"
 				, Final, Epilogue, 0);
@@ -446,12 +447,12 @@ public class Game {
 		
 		GardienneForet.addChoice("Gagner sa confiance",GagnerConfiance, "");
 		
-		GagnerConfiance.addChoice("Merci, Gardienne, de protéger la forêt si fidèlement.");
-		GagnerConfiance.addChoice("Je respecte votre mission de préserver la forêt, Gardienne");	
+		GagnerConfiance.addChoice("Merci, Gardienne, de protéger la forêt si fidèlement");
+		GagnerConfiance.addChoice("Je respecte votre mission de préserver la forêt");	
 		GagnerConfiance.addChoice("Vous faites un travail admirable, Gardienne");
 		
 		GagnerConfiance.addCsq("Bien joué, vous avez réussi, elle vous offre une lance", TerresPolluees, Lance, null,0);
-		GagnerConfiance.addCsq("Elle n’a pas été absolument convaincue mais elle vous laisse passer ", TerresPolluees);
+		GagnerConfiance.addCsq("Elle n’a pas été absolument convaincue mais elle vous laisse passer", TerresPolluees);
 		GagnerConfiance.addCsq("Vous ne l'avez pas convaincue, réessayer, peut-être cela fonctionnera la prochaine fois", GagnerConfiance);
 
 		
@@ -635,13 +636,14 @@ public class Game {
 				suiteBouton.setVisible(false);			//Enlève le bouton suite ">"
 				inventairePanel.setVisible(false);		//N'affiche pas l'inventaire
 				clip.stop();
+				
 				//Affichage des images selon les noeuds
-				if (currentNode.equals(AutelSacre)) {autelsacre.display();}
-				if (currentNode.equals(RencontreImprevue)) {rencontreimprevue.display();}
-				if (currentNode.equals(TerresPolluees)) {terrespolluees.display();}
-				if (currentNode.equals(CheneAncien)) {cheneancien.display();}					
-				if (currentNode.equals(ChoixTresor1)) {choixtresor1.display();}
-				if (currentNode.equals(ChoixTresor2)) {choixtresor2.display();}
+				if (currentNode.equals(AutelSacre)) 		{autelsacre.display();}
+				if (currentNode.equals(RencontreImprevue)) 	{rencontreimprevue.display();}
+				if (currentNode.equals(TerresPolluees)) 	{terrespolluees.display();}
+				if (currentNode.equals(CheneAncien)) 		{cheneancien.display();}					
+				if (currentNode.equals(ChoixTresor1)) 		{choixtresor1.display();}
+				if (currentNode.equals(ChoixTresor2)) 		{choixtresor2.display();}
 				if (currentNode.equals(CristalArgente)) {
 					cristalargenteSon.display();
 					cristalargente.display();}
@@ -649,15 +651,16 @@ public class Game {
 					enigmecristalSon.display();
 					enigmecristal.display();}
 				if (currentNode.equals(CreatureLegendaire)) {creaturelegendaire.display();}
-				if (currentNode.equals(Purification)) {cascade.display();}
-				if (currentNode.equals(Combat1)) {combat1.display();}
-				if (currentNode.equals(GrotteCachee)) {grottecachee.display();}
-				if (currentNode.equals(EspritForet)) {gardienneforet.display();enigmecristalSon.display();}
-				if (currentNode.equals(DecoderParchemin)) {decoderparchemin.display();}
-				if (currentNode.equals(CombatFinal)) {combatfinal.display();}
+				if (currentNode.equals(Purification)) 		{cascade.display();}
+				if (currentNode.equals(Combat1)) 			{combat1.display();}
+				if (currentNode.equals(GrotteCachee)) 		{grottecachee.display();}
+				if (currentNode.equals(EspritForet)) 		{gardienneforet.display();enigmecristalSon.display();}
+				if (currentNode.equals(DecoderParchemin)) 	{decoderparchemin.display();}
+				if (currentNode.equals(CombatFinal))		{combatfinal.display();}
 				
 				if (Game.this.getElementJoueur().getHealth()<=0) {f.setVisible(false);}
-				//Verification du type du noeud
+				
+				//Verification du type du noeud pour le prochain affichage
 				if  (currentNode instanceof DecisionNode) {				
 					descriptionArea.setFont(normalFond);
 					remarqueArea.setVisible(false);
@@ -672,7 +675,7 @@ public class Game {
 				else if (currentNode instanceof ChanceNode) {					
 					//Verification si ChanceNode possède des choix ou non. 
 					//Si c'est le cas, on les affiche
-					//Sinon on passe au noeud suivant en appuyant sur ">"
+					//Sinon on passe au noeud suivant en cliquant sur ">"
 					ChanceNode ChanceNode=(ChanceNode)currentNode;
 					if (ChanceNode.getDecisionChoices()!= null && !ChanceNode.getDecisionChoices().isEmpty()){
 						((ChanceNode) currentNode).afficherChoixIG(Game.this);}
@@ -1574,10 +1577,9 @@ public class Game {
 			//On verifie si apres l'attaque, l'ennemi a encore des points de vie
 			if (((CombatNode)currentNode).getEnnemi().getHealth()-armechoisie.getDegats()>0) { 
 				try {
-					((CombatNode)currentNode).combatIG(Game.this, 1);
-				} catch (ErrDurabilite e) {
-					e.printErr();
-				} // ON ATTAQUE AVEC L'ARME, L'ENNEMI PERD DES POINTS DE VIE ET ATTAQUE
+					((CombatNode)currentNode).combatIG(Game.this, 1); // ON ATTAQUE AVEC L'ARME, L'ENNEMI PERD DES POINTS DE VIE ET ATTAQUE
+				} catch (ErrDurabilite e) {e.printErr();}
+				
 				inventairePanel.setVisible(false);
 			}
 			//Si l'ennemi n'a plus de points de points de vie, alors on passe au prochain noeud
@@ -1796,6 +1798,10 @@ public class Game {
 
 	public JTextArea getNiveauArea() {
 		return niveauArea;
+	}
+
+	public TerminalNode getDefaite() {
+		return Defaite;
 	}
 
 }

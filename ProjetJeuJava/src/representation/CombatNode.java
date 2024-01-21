@@ -79,12 +79,13 @@ public class CombatNode extends InnerNode{
 					case 1:
 						g.getInventaire().afficherInventaireArmes();				//AFFICHE LISTE NUMEROTEE DES ARMES
 						armechoisie=g.getInventaire().choisirArme();				//RETOURNE L'ARME CHOISIE
-						armechoisie.attaquer(g, true);                   //AFFICHE LES DEGATS DE L'ARME
-						e.setHealth(e.getHealth()-armechoisie.getDegats()); //DIMINUE LES POINTS DE VIE DE L'ENNEMI
+						armechoisie.attaquer(g, true);                   			//AFFICHE LES DEGATS DE L'ARME
+						e.setHealth(e.getHealth()-armechoisie.getDegats()); 		//DIMINUE LES POINTS DE VIE DE L'ENNEMI
 						System.out.println("\nL'ennemi a désormais "+e.getHealth()+" points de vie.\n");
 						if (e.getHealth()>=0) {
-						e.EnnemisAttaque(g, true);}
-						if(g.getElementJoueur().getHealth()<=10) {System.out.println("Attention, vous êtes en danger, récupérez des points de vie avec une potion");}
+							e.EnnemisAttaque(g, true);}
+						if(g.getElementJoueur().getHealth()<=10) {
+							System.out.println("Attention, vous êtes en danger, récupérez des points de vie avec une potion");}
 						choixValide = true;
 						break;
 					case 2:
@@ -98,7 +99,7 @@ public class CombatNode extends InnerNode{
 						System.out.println("Attaque avec "+g.getElementJoueur().getPv1()+" ! Degâts : 10");
 						System.out.println("\nL'ennemi a désormais "+e.getHealth()+" points de vie.\n");
 						if (e.getHealth()>=0) {
-						e.EnnemisAttaque(g, true);}
+							e.EnnemisAttaque(g, true);}
 						choixValide = true;
 						break;
 					case 4:
@@ -114,7 +115,7 @@ public class CombatNode extends InnerNode{
 						System.out.println("Attaque avec "+g.getElementJoueur().getPv3()+" ! Degâts : 12");
 						System.out.println("\nL'ennemi a désormais "+e.getHealth()+" points de vie.\n");
 						if (e.getHealth()>=0) {
-						e.EnnemisAttaque(g, true);}
+							e.EnnemisAttaque(g, true);}
 						choixValide = true;
 						break;
 					case 6:
@@ -123,7 +124,7 @@ public class CombatNode extends InnerNode{
 						System.out.println("Attaque avec "+g.getElementJoueur().getPv4()+" ! Degâts : 20");
 						System.out.println("\nL'ennemi a désormais "+e.getHealth()+" points de vie.\n");
 						if (e.getHealth()>=0) {
-						e.EnnemisAttaque(g, true);}
+							e.EnnemisAttaque(g, true);}
 						choixValide = true;}
 						break;
 					case 7:
@@ -132,7 +133,7 @@ public class CombatNode extends InnerNode{
 						System.out.println("Attaque avec "+g.getElementJoueur().getPv5()+" ! Degâts : 30");
 						System.out.println("\nL'ennemi a désormais "+e.getHealth()+" points de vie.\n");
 						if (e.getHealth()>=0) {
-						e.EnnemisAttaque(g, true);}
+							e.EnnemisAttaque(g, true);}
 						choixValide = true;}
 						break;
 					default:
@@ -145,15 +146,15 @@ public class CombatNode extends InnerNode{
 			
 		}
 		if (expbonus>0) {
-		g.getElementJoueur().gagnerExp(expbonus, g, true);}
+			g.getElementJoueur().gagnerExp(expbonus, g, true);}
 		if (g.getElementJoueur().getHealth()>0) {
-		return nextNode;}
-		else {return null;}
+			return nextNode;}
+		else {return g.getDefaite();}
 	}
 	
 	
 	
-	//La suite concerne le cas d'une interface graphique (ig)
+	//La suite concerne le cas d'une interface graphique (IG)
 	
 	
 	//A chaque combat 2 pouvoirs sont choisis au hasard parmi la liste des pouvoirs du joueur

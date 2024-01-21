@@ -53,9 +53,9 @@ public abstract class PersoDeBase implements Serializable{
     
     
 /**
- * Methode abstraite qui doit être implementee par les classes filles pour obtenir une description specifique.
+ * Methode abstraite qui doit etre implementee par les classes filles pour obtenir une description specifique.
  *
- * @return Une chaîne de caractères decrivant le personnage.
+ * @return Une chaine de caracteres decrivant le personnage.
  */
 	public abstract String getDescription();
 
@@ -75,7 +75,7 @@ public abstract class PersoDeBase implements Serializable{
     /**
      * Retourne une liste de pouvoirs disponibles en fonction du niveau d'experience du personnage.
      *
-     * @param g L'objet Game associe à l'interface graphique.
+     * @param g  L'instance actuelle du jeu (Game)
      * @return Une liste de pouvoirs disponibles.
      */
     public ArrayList<String> getPouvoirsDisponibles(Game g) {
@@ -127,31 +127,33 @@ public abstract class PersoDeBase implements Serializable{
      * Infliction de degats au personnage. Reduit la sante et affiche un message correspondant.
      *
      * @param degats          Les degats à infliger.
-     * @param g               L'objet Game associe à l'interface graphique.
+     * @param g               L'instance actuelle du jeu (Game)
      * @param estSurConsole   Indique si le jeu est en mode console.
      */
     public void prendreDesDegats(int degats, Game g, boolean estSurConsole) {
         health -= degats;
         if (estSurConsole) {
         	 if (health <= 0) {health = 0;}
-            System.out.println("L'ennemi attaque vous perdez " + degats + " points de vie.\nVous avez désormais " + health + " points de vie.");
+        	 System.out.println("L'ennemi attaque vous perdez " + degats + " points de vie.\nVous avez désormais " + health + " points de vie.");
         } else {
             g.getDescriptionArea().setText(g.getDescriptionArea().getText() + "L'ennemi attaque vous perdez " + degats + " points de vie.");
-            if (health <= 0) {health = 0;}
+            //Si le joueur n'a plus de points de vie, on affiche "Vous avez perdu" dans la fenetre Result
+            if (health <= 0) {
+            	health = 0; 
+            	g.afficherFenetreResult();
+            	g.getResultArea().setText((g.getDefaite().getDescription()));
+            }
             g.getHpLabelNb().setText("" + health);
-        }
-        if (health <= 0) {
-            health = 0;
-            mourir(g, estSurConsole);
+            
         }
     }
 
     /**
      * Guerison du personnage. Augmente la sante et affiche un message correspondant.
      *
-     * @param soins           Les points de guerison à appliquer.
-     * @param g               L'objet Game associe à l'interface graphique.
-     * @param estSurConsole   Indique si le jeu est en mode console.
+     * @param soins           Les points de vie a ajouter.
+     * @param g               L'instance actuelle du jeu (Game)
+     * @param estSurConsole   Indique si le jeu est en mode console
      */
     public void guerir(int soins, Game g, boolean estSurConsole) {
         health += soins;
@@ -162,10 +164,11 @@ public abstract class PersoDeBase implements Serializable{
         	g.getHpLabelNb().setText(""+health);    	
         }
     }
+    
     /**
-     * Augmente le nombre de points d'experience du joueur et gère les modifications d'interface liees à cet ajout.
+     * Augmente le nombre de points d'experience du joueur et gere les modifications d'interface liees a cet ajout.
      *
-     * @param points        Le nombre de points d'experience à ajouter.
+     * @param points        Le nombre de points d'experience a ajouter.
      * @param g             L'instance actuelle du jeu (Game).
      * @param estSurConsole Indique si l'execution se fait sur une console ou non.
      */
@@ -192,7 +195,7 @@ public abstract class PersoDeBase implements Serializable{
     }
  
     /**
-     * Affiche le passage à un nouveau niveau du joueur et attribue de nouveaux pouvoirs en fonction du niveau atteint.
+     * Affiche le passage a un nouveau niveau du joueur et attribue de nouveaux pouvoirs en fonction du niveau atteint.
      *
      * @param niveauActuel   Le nouveau niveau atteint par le joueur (Niveaux).
      * @param estSurConsole  Indique si l'execution se fait sur une console ou non.
@@ -245,11 +248,11 @@ public abstract class PersoDeBase implements Serializable{
 	}
 
     /**
-     * Diminue le nombre de points d'expérience du joueur et gère les modifications d'interface liées à cette perte.
+     * Diminue le nombre de points d'experience du joueur et gere les modifications d'interface liees a cette perte.
      *
-     * @param points        Le nombre de points d'expérience à retirer.
+     * @param points        Le nombre de points d'experience à retirer.
      * @param g             L'instance actuelle du jeu (Game).
-     * @param estSurConsole Indique si l'exécution se fait sur une console ou non.
+     * @param estSurConsole Indique si l'execution se fait sur une console ou non.
      */
 	public void perdreExp(int points, Game g, boolean estSurConsole) {
         exp += points;
@@ -262,29 +265,6 @@ public abstract class PersoDeBase implements Serializable{
         	g.getResultArea().setText("Vous perdez "+points+ " points d'expérience."+g.getResultArea().getText());
             g.getExpLabelNb().setText(""+exp);
         }
-    }
-
-    
-    /**
-     * Affiche un message indiquant que le joueur n'a plus de points de vie, annonçant la fin de la partie.
-     * Crée une nouvelle instance de jeu pour permettre une nouvelle partie.
-     * Masque la fenêtre du jeu actuelle.
-     * 
-     * @param g             L'instance actuelle du jeu (Game).
-     * @param estSurConsole Indique si l'exécution se fait sur une console ou non.
-     * @see Game
-     */
-    private void mourir(Game g, boolean estSurConsole) {
-    	if (estSurConsole) {
-    		System.out.println("Vous n'avez plus de points de vie. Vous avez perdu");
-    		new Main();
-    		}
-    	else {
-    	g.afficherFenetreResult();
-    	g.getResultArea().setText("Vous n'avez plus de points de vie. Vous avez perdu");
-    	g.afficherFenetreResult();
-    	
-    	}
     }
     
     
